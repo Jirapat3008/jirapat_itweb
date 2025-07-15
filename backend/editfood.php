@@ -33,7 +33,7 @@ include 'controls/idfoods.php';
 
         <main class="p-4 flex-grow-1">
             <h2>Edit Products</h2>
-            <form action="controls/editFood.php" method="POST">
+            <form action="controls/editFood.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $food['id']; ?>">
                 <div class="mb-3">
                     <label for="">Product Name</label>
@@ -47,7 +47,11 @@ include 'controls/idfoods.php';
                     <label for="">Price</label>
                     <input type="text" name="price" class="form-control" value="<?= htmlspecialchars($food['price']); ?>">
                 </div>
-                <a href="menu.php" class="btn btn-secondary">Back</a>
+                <div class="mb-3">
+                    <label for="">Picture</label>
+                    <input type="file" name="product_image" class="form-control" value="">
+                </div>
+ 
                 <button type="submit" class="btn btn-success">Save</button>
                 <button type="reset" class="btn btn-danger">Reset</button>
             </form>

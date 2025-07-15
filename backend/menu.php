@@ -34,22 +34,29 @@ include 'controls/fetchProduct.php'
         <?php include '../backend/components/header.php'; ?>
 
         <main class="p-4 flex-grow-1">
-            <h2>Menu List</h2>
+            <div class="d-flex justify-content-between mb-3">
+                <h2>Menu List</h2>
+                <a href="addmenu.php" class="btn btn-outline-secondary p-2 fw-bold">Add Menu</a>
+            </div>
             <table class="table table-bordered">
-                <thead class="table-dark ">
+                <thead class="table-dark text-center">
                     <tr>
-                        <th class="text-center">ID</th>
+                        <th>ID</th>
+                        <th>Product image</th>
                         <th>Product Name</th>
                         <th>Description</th>
                         <th>Price</th>
-                        <th class="text-center">Create Date</th>
-                        <th class="text-center">Manage</th>
+                        <th>Create Date</th>
+                        <th>Manage</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                         <tr>
                             <td class="text-center"><?= htmlspecialchars($row['id']); ?></td>
+                            <td>
+                                <img src="../assets/imgs/<?= htmlspecialchars($row['product_image']); ?>" alt="" style="width: 150px;">
+                            </td>
                             <td class="text-left"><?= htmlspecialchars($row['product_name']); ?></td>
                             <td class="text-left"><?= htmlspecialchars($row['description']); ?></td>
                             <td class="text-left"><?= htmlspecialchars($row['price']); ?> THB</td>

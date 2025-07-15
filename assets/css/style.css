@@ -11,3 +11,10 @@
     font-family: 'Kanit';
     font-weight: 500;
 }
+
+.floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+}

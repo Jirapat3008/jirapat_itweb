@@ -24,11 +24,15 @@
 <body>
     <div class="d-flex">
         <?php include '../backend/components/header.php'; ?>
+        
 
         <main class="p-4 flex-grow-1">
             <h2>Welcome <?php echo htmlspecialchars($_SESSION['name']) ?></h2>
             <p>มึงอยู่หน้า Dashboard อีสัส</p>
+            <a href="../index.php" class="btn btn-outline-secondary p-2 fw-bold">Back to homepage</a>
         </main>
+
+        
     </div>
 </body>
 </html>

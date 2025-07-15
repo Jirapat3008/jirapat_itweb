@@ -1,4 +1,4 @@
-<nav class="bg-dark text-white p-3 vh-100 ">
+<nav class="bg-dark text-white p-3 vh-100 h-auto">
     <h4 class="text-center mb-4 p-4">Admin Panel</h4>
     <ul class="nav flex-column p-3">
         <li class="nav-item"><a href="/itweb/backend/index.php" class="nav-link text-white">Dashboard</a></li>

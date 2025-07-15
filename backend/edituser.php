@@ -64,7 +64,7 @@
                 </div> -->
                 <div class="mb-3">
                     <label for="">Picture</label>
-                    <input type="file" name="profile_image" class="form-control">
+                    <input type="file" name="profile_image" class="form-control" value="">
                 </div>
                     <a href="users.php" class="btn btn-secondary">Back</a>
                     <button type="submit" class="btn btn-success">Save</button>
