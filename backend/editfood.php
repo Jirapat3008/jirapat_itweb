@@ -6,6 +6,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 }
 
 include 'controls/idfoods.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -37,21 +38,28 @@ include 'controls/idfoods.php';
                 <input type="hidden" name="id" value="<?= $food['id']; ?>">
                 <div class="mb-3">
                     <label for="">Product Name</label>
-                    <input type="text" name="product_name" class="form-control" value="<?= htmlspecialchars($food['product_name']); ?>">
+                    <input type="text" name="product_name" class="form-control"
+                        value="<?= htmlspecialchars($food['product_name']); ?>">
                 </div>
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <input type="text" name="description" class="form-control" value="<?= htmlspecialchars($food['description']); ?>">
+                    <input type="text" name="description" class="form-control"
+                        value="<?= htmlspecialchars($food['description']); ?>">
                 </div>
                 <div class="mb-3">
                     <label for="">Price</label>
-                    <input type="text" name="price" class="form-control" value="<?= htmlspecialchars($food['price']); ?>">
+                    <input type="text" name="price" class="form-control"
+                        value="<?= htmlspecialchars($food['price']); ?>">
+                </div>
+                <div class="mb-3 d-flex flex-column">
+                    <label for="">Show Picture</label>
+                    <img src="../assets/imgs/<?= htmlspecialchars($food['product_image']); ?>" alt="" style="width: 150px;" >
                 </div>
                 <div class="mb-3">
                     <label for="">Picture</label>
                     <input type="file" name="product_image" class="form-control" value="">
                 </div>
- 
+
                 <button type="submit" class="btn btn-success">Save</button>
                 <button type="reset" class="btn btn-danger">Reset</button>
             </form>

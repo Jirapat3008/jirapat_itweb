@@ -27,6 +27,12 @@ include 'controls/fetchProduct.php'
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        .hov:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,6 +47,7 @@ include 'controls/fetchProduct.php'
             <table class="table table-bordered">
                 <thead class="table-dark text-center">
                     <tr>
+                        <th>No.</th>
                         <th>ID</th>
                         <th>Product image</th>
                         <th>Product Name</th>
@@ -51,21 +58,24 @@ include 'controls/fetchProduct.php'
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <?php $no = 1; while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                         <tr>
+                            <td class="text-center"><?= $no++; ?></td>
                             <td class="text-center"><?= htmlspecialchars($row['id']); ?></td>
                             <td>
-                                <img src="../assets/imgs/<?= htmlspecialchars($row['product_image']); ?>" alt="" style="width: 150px;">
+                                <a href="../assets/imgs/<?= htmlspecialchars($row['product_image']); ?>" target="_blank">
+                                    <img src="../assets/imgs/<?= htmlspecialchars($row['product_image']); ?>" alt="" style="width: 150px;" class="hov">
+                                </a>
                             </td>
                             <td class="text-left"><?= htmlspecialchars($row['product_name']); ?></td>
                             <td class="text-left"><?= htmlspecialchars($row['description']); ?></td>
                             <td class="text-left"><?= htmlspecialchars($row['price']); ?> THB</td>
                             <td class="text-center"><?= htmlspecialchars($row['created_at']); ?></td>
                             <td class="text-center">
-                                <a href="editfood.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">
+                                <a href="editfood.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning mb-3">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?= $row['id'] ?>)">
+                                <button class="btn btn-sm btn-danger mb-3" onclick="confirmDelete(<?= $row['id'] ?>)">
                                     <i class="bi bi-trash3-fill"></i>
                                 </button>
                                 <script>

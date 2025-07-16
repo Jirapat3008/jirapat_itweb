@@ -24,7 +24,7 @@
 
                     <li class="nav-item dropdown">
                         <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Welcome! <?php echo htmlspecialchars($_SESSION['name']) ?> to My Website
+                            Welcome! <?php echo htmlspecialchars($_SESSION['name']); ?> to My Website
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
